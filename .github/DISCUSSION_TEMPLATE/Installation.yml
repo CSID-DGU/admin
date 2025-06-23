@@ -38,13 +38,13 @@ body:
   - type: input
     id: marketplace_url
     attributes:
-      label: "GitHub Marketplace 내 앱 URL (해당 시)"
+      label: "[GitHub Marketplace 전용 앱인 경우] 앱 URL"
       placeholder: "예: https://github.com/marketplace/gitbook-com"
 
   - type: input
     id: target_repo
     attributes:
-      label: "설치 대상 Repository (일반 GitHub App인 경우)"
+      label: "[일반 GitHub App인 경우] 설치 대상 Repository"
       placeholder: "예: csid-dgu/ai-project-team"
 
   - type: textarea
@@ -61,15 +61,15 @@ body:
       value: |
         ### ✅ 설치 요청 체크리스트
 
-        아래 항목 중 **해당되는 항목만 체크**해 주세요.
+        아래 항목 중 **해당되는 항목을 점검하고 체크**해 주세요.
 
   - type: checkboxes
     id: checklist
     attributes:
       label: "[일반 GitHub App인 경우]"
       options:
-        - label: 앱 설치 요청 과정 중 Repository access - "Only select repositories"에서 본인 팀의 repository를 선택하고 하단의 **Update access** 버튼을 클릭하였는가?
-        - label: Update access 클릭 후, 화면 상단에 `"Okay, APP_NAME was updated for the @CSID-DGU account"` 메시지가 표시되었는가?
+        - label: 앱 설치 요청 과정 중 Repository access - `"Only select repositories"`에서 본인 팀의 repository를 선택하고 하단의 **Update access** 버튼을 클릭하였는가?
+        - label: **Update access** 버튼 클릭 후, 화면 상단에 `"Okay, APP_NAME was updated for the @CSID-DGU account"` 메시지가 표시되었는가?
 
   - type: checkboxes
     id: checklist_marketplace
