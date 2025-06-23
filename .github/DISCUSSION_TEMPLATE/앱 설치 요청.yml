@@ -1,6 +1,6 @@
 title: "[앱 설치 요청] 앱 이름을 입력해 주세요"
 labels:
-  - Installation
+  - 앱 설치 요청
 body:
   - type: markdown
     attributes:
