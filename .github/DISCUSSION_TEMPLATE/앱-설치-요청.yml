@@ -1,63 +1,55 @@
-name: "앱 설치 요청"
-description: "GitHub App 또는 Marketplace App 설치 요청 시 사용해주세요."
-title: "[앱 설치 요청] <앱 이름 입력>"
-labels: ["앱 설치 요청"]
+title: "[General] "
+labels: ["General Introduction"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## 🔧 설치하려는 앱 유형을 선택해주세요
-
-  - type: dropdown
+        This is text that will show up in the template!
+  - type: textarea
+    id: improvements
     attributes:
-      label: 앱 유형
-      description: 설치하려는 앱의 유형을 선택하세요.
-      multiple: false
-      options:
-        - GitHub App (일반 개발자 등록 앱)
-        - GitHub Marketplace App (마켓플레이스 전용)
-      default: 0
+      label: Top 3 improvements
+      description: "What are the top 3 improvements we could make to this project?"
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
     validations:
       required: true
-
-  - type: textarea
-    attributes:
-      label: 앱 이름
-      description: 설치하려는 앱의 이름을 입력해주세요.
-      placeholder: 예시) coderabbitai, gitbook 등
-      value: ""
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: 설치 URL
-      description: 일반 앱인 경우 설치 URL을 입력해주세요. Marketplace 앱인 경우 생략 가능합니다.
-      placeholder: 예시) https://github.com/apps/coderabbitai/installations/new
-      value: ""
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: 설치 요청 사유
-      description: 왜 이 앱이 필요한지 간단히 적어주세요.
-      placeholder: 팀 프로젝트 협업을 위해 필요합니다.
-      value: ""
-    validations:
-      required: true
-
-  - type: checkboxes
-    attributes:
-      label: 확인 사항
-      description: 요청 전 아래 내용을 확인해주세요.
-      options:
-        - label: 설치 요청 앱의 유형을 정확히 확인했습니다.
-          required: true
-        - label: 내 팀의 리포지토리만 선택하여 접근 권한을 요청할 예정입니다.
-          required: true
-
   - type: markdown
     attributes:
       value: |
-        감사합니다. 요청이 접수되면 운영진이 확인 후 설치를 진행합니다.
+        ## Markdown header
+        And some more markdown
+  - type: input
+    id: has-id
+    attributes:
+      label: Suggestions
+      description: A description about suggestions to help you
+    validations:
+      required: true
+  - type: dropdown
+    id: download
+    attributes:
+      label: Which area of this project could be most improved?
+      options:
+        - Documentation
+        - Pull request review time
+        - Bug fix time
+        - Release cadence
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Check that box!
+      options:
+        - label: This one!
+          required: true
+        - label: I won't stop you if you check this one, too
+  - type: markdown
+    attributes:
+      value: |
+        ### The thrilling conclusion
+        _to our template_
