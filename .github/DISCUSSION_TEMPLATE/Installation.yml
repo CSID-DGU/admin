@@ -69,7 +69,7 @@ body:
       label: "[일반 GitHub App인 경우]"
       options:
         - label: 앱 설치 요청 과정 중 Repository access - `"Only select repositories"`에서 본인 팀의 repository를 선택하고 하단의 **Update access** 버튼을 클릭하였는가?
-        - label: **Update access** 버튼 클릭 후, 화면 상단에 `"Okay, APP_NAME was updated for the @CSID-DGU account"` 메시지가 표시되었는가?
+        - label: '**Update access** 버튼 클릭 후, 화면 상단에 "Okay, APP_NAME was updated for the @CSID-DGU account" 메시지가 표시되었는가?'
 
   - type: checkboxes
     id: checklist_marketplace
