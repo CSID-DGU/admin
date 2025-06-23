@@ -1,0 +1,47 @@
+title: "조교 권한 변경 요청: @{변경 대상자 GitHub ID}"
+labels:
+  - Permission
+  - Role Change
+body:
+  - type: markdown
+    attributes:
+      value: |
+        아래 항목을 작성하여 조교 권한 변경 요청을 제출해 주세요.
+        요청된 내용은 검토 후 신속히 처리됩니다.
+
+  - type: input
+    id: target_id
+    attributes:
+      label: "변경 대상자 GitHub ID"
+      placeholder: "예: dgu-ta2024"
+    validations:
+      required: true
+
+  - type: input
+    id: current_role
+    attributes:
+      label: "현재 권한 (자동 고정: Owner)"
+      default: "Owner"
+      disabled: true
+
+  - type: input
+    id: target_role
+    attributes:
+      label: "변경 후 권한 (자동 고정: Member)"
+      default: "Member"
+      disabled: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "변경 사유"
+      description: 과목 종료, 활동 종료 등 변경 요청 이유를 간단히 적어 주세요.
+      placeholder: "예: 2024년 1학기 SW개발실습 조교 활동 종료"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ✅ 제출 후 권한 변경까지 최대 24시간 소요될 수 있습니다.
+        확인이 완료되면 해당 Discussion에 답글로 결과를 알려드립니다.
