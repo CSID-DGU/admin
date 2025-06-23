@@ -1,14 +1,12 @@
-title: "[앱 설치 요청] 앱 이름을 여기에 입력하세요"
+title: "[앱 설치 요청] 앱 이름을 입력해 주세요"
 labels:
   - Installation
 body:
   - type: markdown
     attributes:
       value: |
-        아래 안내를 참고하여 설치하려는 앱 종류를 선택하고, 필요한 정보를 작성해 주세요.
-
-        - 일반 GitHub App: 설치 링크가 `https://github.com/apps/<앱이름>/installations/new` 형태
-        - GitHub Marketplace 전용 앱: 별도 설치 요청 필요 (예: GitBook)
+        아래 항목을 모두 채워주세요.  
+        일부 항목은 선택한 앱 유형에 따라 선택적으로 입력해도 됩니다.
 
   - type: dropdown
     id: app_type
@@ -21,7 +19,6 @@ body:
     validations:
       required: true
 
-  # ✅ 일반 GitHub App 전용 필드
   - type: input
     id: github_username
     attributes:
@@ -29,85 +26,55 @@ body:
       placeholder: "예: dgu-student01"
     validations:
       required: true
-    conditions:
-      - app_type == "일반 GitHub App"
 
   - type: input
     id: app_name
     attributes:
-      label: "앱 이름"
-      placeholder: "예: coderabbitai"
+      label: "설치 요청 앱 이름"
+      placeholder: "예: coderabbitai, sentry, gitbook"
     validations:
       required: true
 
   - type: input
-    id: install_url
+    id: marketplace_url
     attributes:
-      label: "앱 설치 URL"
-      placeholder: "예: https://github.com/apps/coderabbitai/installations/new"
-    validations:
-      required: true
-    conditions:
-      - app_type == "일반 GitHub App"
+      label: "GitHub Marketplace 내 앱 URL (해당 시)"
+      placeholder: "예: https://github.com/marketplace/gitbook-com"
 
   - type: input
     id: target_repo
     attributes:
-      label: "설치 대상 Repository"
+      label: "설치 대상 Repository (일반 GitHub App인 경우)"
       placeholder: "예: csid-dgu/ai-project-team"
-    validations:
-      required: true
 
   - type: textarea
     id: reason
     attributes:
       label: "설치 요청 사유"
-      description: "해당 앱이 필요한 이유를 간단히 설명해 주세요."
-      placeholder: "예: 코드 리뷰 자동화 도구 사용 목적"
+      description: "해당 앱이 왜 필요한지 간단히 설명해 주세요."
+      placeholder: "예: 코드 리뷰 자동화, 문서화 도구 사용 등"
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### ✅ 설치 요청 체크리스트
+
+        아래 항목 중 **해당되는 항목만 체크**해 주세요.
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: "설치 요청 체크리스트"
+      label: "[일반 GitHub App인 경우]"
       options:
-        - label: GitHub App 설치 요청 메일을 발송했음을 확인했습니다.
-        - label: 설치 URL에서 'CSID-DGU' 조직을 선택했습니다.
-        - label: 설치 대상 Repository를 선택했습니다.
-        - label: 상단에 “Okay, [APP_NAME] was updated…” 메시지를 확인했습니다.
-    conditions:
-      - app_type == "일반 GitHub App"
+        - label: 앱 설치 요청 과정 중 Repository access - "Only select repositories"에서 본인 팀의 repository를 선택하고 하단의 **Update access** 버튼을 클릭하였는가?
+        - label: Update access 클릭 후, 화면 상단에 `"Okay, APP_NAME was updated for the @CSID-DGU account"` 메시지가 표시되었는가?
 
-  # ✅ GitHub Marketplace 전용 앱 필드
-  - type: input
-    id: marketplace_url
+  - type: checkboxes
+    id: checklist_marketplace
     attributes:
-      label: "GitHub Marketplace 내 앱 URL"
-      placeholder: "예: https://github.com/marketplace/gitbook-com"
-    validations:
-      required: true
-    conditions:
-      - app_type == "GitHub Marketplace 전용 앱"
-
-  # 재사용 필드
-  - type: input
-    id: target_repo_market
-    attributes:
-      label: "설치 대상 Repository"
-      placeholder: "예: csid-dgu/ai-project-team"
-    validations:
-      required: true
-    conditions:
-      - app_type == "GitHub Marketplace 전용 앱"
-
-  - type: textarea
-    id: reason_market
-    attributes:
-      label: "설치 요청 사유"
-      description: "해당 앱이 필요한 이유를 간단히 설명해 주세요."
-      placeholder: "예: 문서 자동화 플랫폼 사용 목적"
-    validations:
-      required: true
-    conditions:
-      - app_type == "GitHub Marketplace 전용 앱"
+      label: "[GitHub Marketplace 전용 앱인 경우]"
+      options:
+        - label: GitHub Marketplace URL을 올바르게 입력했는가?
+        - label: 해당 앱은 특정 repository만 선택하여 설치할 수 없고 **Organization 전체에 설치됨**을 인지하였는가? 따라서 반드시 필요한 경우에만 요청해야 함을 확인했는가?
