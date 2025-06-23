@@ -1,14 +1,14 @@
 title: "앱 설치 요청"
 labels:
   - installation
-category: "앱 설치 요청"
 body:
   - type: markdown
-    value: |
-      아래 안내를 참고하여 설치하려는 앱 종류를 선택하고, 필요한 정보를 작성해 주세요.
+    attributes:
+      value: |
+        아래 안내를 참고하여 설치하려는 앱 종류를 선택하고, 필요한 정보를 작성해 주세요.
 
-      - 일반 GitHub App: 설치 링크가 `https://github.com/apps/<앱이름>/installations/new` 형태
-      - GitHub Marketplace 전용 앱: 별도 설치 요청 필요 (예: GitBook)
+        - 일반 GitHub App: 설치 링크가 `https://github.com/apps/<앱이름>/installations/new` 형태
+        - GitHub Marketplace 전용 앱: 별도 설치 요청 필요 (예: GitBook)
 
   - type: dropdown
     id: app_type
@@ -51,3 +51,13 @@ body:
       placeholder: "예: 린트 자동화, 이슈 템플릿 자동 생성 등"
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **설치 완료 체크리스트**
+
+        - 일반 GitHub App 설치 시:
+          - 설치 URL → CSID-DGU 선택
+          - Repository 선택 → `Update access`
+          - 상단에 "Okay, APP_NAME was updated..." 메시지 확인 시 완료
