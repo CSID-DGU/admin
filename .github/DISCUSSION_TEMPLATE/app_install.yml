@@ -1,0 +1,66 @@
+name: "앱 설치 요청"
+description: "GitHub App 또는 Marketplace App 설치 요청 시 사용해주세요."
+title: "[앱 설치 요청] <앱 이름 입력>"
+labels: ["앱 설치 요청"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📌 설치하려는 앱의 유형을 선택해주세요
+        아래 안내에 따라 정확한 요청 정보를 입력해주세요.
+
+        ---
+  - type: dropdown
+    id: app_type
+    attributes:
+      label: 앱 유형
+      description: 설치하려는 앱의 유형을 선택하세요.
+      options:
+        - 일반 GitHub App (https://github.com/apps/...)
+        - GitHub Marketplace 전용 App
+    validations:
+      required: true
+
+  - type: input
+    id: app_name
+    attributes:
+      label: 앱 이름
+      placeholder: 예: coderabbitai, gitbook
+    validations:
+      required: true
+
+  - type: input
+    id: github_username
+    attributes:
+      label: 설치 요청자 GitHub ID
+      placeholder: 예: jihopark
+    validations:
+      required: true
+
+  - type: input
+    id: target_repo
+    attributes:
+      label: 설치 요청 대상 Repository
+      placeholder: 예: ai-23-01-team03
+    validations:
+      required: true
+
+  - type: textarea
+    id: marketplace_reason
+    attributes:
+      label: (선택) GitHub Marketplace 앱인 경우 설치 목적/이유
+      placeholder: GitBook을 사용하여 팀 프로젝트 문서를 작성하고자 합니다. 설치 후 연동 예정입니다.
+      description: GitHub Marketplace 앱은 자동 설치 요청이 불가능하여 수동 검토가 필요합니다. 설치 필요성을 간략히 설명해주세요.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ✅ **[일반 GitHub App]** 요청자는 앱 설치 화면에서 다음을 완료해주세요:
+        - 설치 위치로 `CSID-DGU` 선택
+        - Repository access → `Only select repositories` 선택 후 본인 팀 repo 지정
+        - "Update access" 클릭 후 확인 메시지 (`was updated`)가 뜨면 설치 요청 완료
+
+        📝 **[Marketplace 전용 App]** 은 수동 검토가 필요합니다. 위 텍스트 박스에 간단한 설명을 남겨주세요.
