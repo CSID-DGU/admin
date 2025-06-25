@@ -23,7 +23,7 @@ body:
       required: true
 
   - type: dropdown
-    id: role_type
+    id: role_before
     attributes:
       label: "현재(변경 전) 권한"
       description: 현재 본인의 권한이 무엇인지 선택해 주세요.
@@ -34,7 +34,7 @@ body:
       required: true
 
   - type: dropdown
-    id: role_type
+    id: role_after
     attributes:
       label: "요청 (변경 후) 권한"
       description: 요청 권한이 무엇인지 선택해 주세요.
@@ -57,5 +57,5 @@ body:
     attributes:
       label: "✅ 권한 변경 요청 전 확인 사항"
       options:
-        - label: 권한 변경 신청에 대해 담당 교수의 승인을 받았습니다.
-        - label: Username 및 과목명을 정확하게 입력하였습니다.
+        - label1: 권한 변경 신청에 대해 담당 교수의 승인을 받았습니다.
+        - label2: Username 및 과목명을 정확하게 입력하였습니다.
