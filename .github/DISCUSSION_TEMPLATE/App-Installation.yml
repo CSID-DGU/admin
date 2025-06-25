@@ -14,17 +14,6 @@ body:
         `[앱 설치 요청] {년도}-{학기}-{과목명}-{분반번호 *없는 경우 생략}`  
         예: `[앱 설치 요청] 2025-1-DSCD`        
 
-  - type: dropdown
-    id: app_type
-    attributes:
-      label: "앱 종류 선택"
-      description: 설치하려는 앱 유형을 선택해 주세요.
-      options:
-        - 일반 GitHub App
-        - GitHub Marketplace 전용 앱
-    validations:
-      required: true
-
   - type: input
     id: github_username
     attributes:
@@ -37,21 +26,15 @@ body:
     id: app_name
     attributes:
       label: "설치 요청 앱 이름"
-      placeholder: "예: coderabbitai, Sentry, GitBook"
+      placeholder: "예: coderabbitai, Render, ChatGPT 등"
     validations:
       required: true
       
   - type: input
     id: target_repo
     attributes:
-      label: "[일반 GitHub App인 경우에만 입력] 설치 대상 Repository"
+      label: "설치 대상 Repository"
       placeholder: "예: CSID-DGU/Sample-Repository"
-
-  - type: input
-    id: marketplace_url
-    attributes:
-      label: "[GitHub Marketplace 전용 앱인 경우에만 입력] 앱 URL"
-      placeholder: "예: https://github.com/marketplace/gitbook-com"
 
   - type: textarea
     id: reason
@@ -72,15 +55,6 @@ body:
   - type: checkboxes
     id: checklist
     attributes:
-      label: "[일반 GitHub App인 경우]"
       options:
         - label: 앱 설치 요청 과정 중 Repository access - `"Only select repositories"`에서 본인 팀의 repository를 선택하고 하단의 **Update access** 버튼을 클릭하였는가?
         - label: '**Update access** 버튼 클릭 후, 화면 상단에 "Okay, APP_NAME was updated for the @CSID-DGU account" 메시지가 표시되었는가?'
-
-  - type: checkboxes
-    id: checklist_marketplace
-    attributes:
-      label: "[GitHub Marketplace 전용 앱인 경우]"
-      options:
-        - label: GitHub Marketplace URL을 올바르게 입력했는가?
-        - label: 해당 앱은 특정 repository만 선택하여 설치할 수 없고 **Organization 전체에 설치됨**을 인지하였는가? 따라서 반드시 필요한 경우에만 요청해야 함을 확인했는가?
