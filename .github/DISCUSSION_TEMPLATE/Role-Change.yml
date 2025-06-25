@@ -22,10 +22,32 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: role_type
+    attributes:
+      label: "현재(변경 전) 권한"
+      description: 현재 본인의 권한이 무엇인지 선택해 주세요.
+      options:
+        - Member
+        - Owner
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role_type
+    attributes:
+      label: "요청 (변경 후) 권한"
+      description: 요청 권한이 무엇인지 선택해 주세요.
+      options:
+        - Member
+        - Owner
+    validations:
+      required: true
+
   - type: input
     id: course_name
     attributes:
-      label: "종료된 과목 정보"
+      label: "과목 정보"
       placeholder: "예: [년도]-[학기]-[과목명]-[분반번호 *없는 경우 생략]"
     validations:
       required: true
@@ -35,5 +57,5 @@ body:
     attributes:
       label: "✅ 권한 변경 요청 전 확인 사항"
       options:
-        - label: 담당 과목이 종료되었음을 확인했습니다.
-        - label: 더 이상 Owner 권한이 필요하지 않음을 담당 교수와 확인했습니다.
+        - label: 권한 변경 신청에 대해 담당 교수의 승인을 받았습니다.
+        - label: Username 및 과목명을 정확하게 입력하였습니다.
