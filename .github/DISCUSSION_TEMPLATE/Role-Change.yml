@@ -57,5 +57,5 @@ body:
     attributes:
       label: "✅ 권한 변경 요청 전 확인 사항"
       options:
-        - label1: 권한 변경 신청에 대해 담당 교수의 승인을 받았습니다.
-        - label2: Username 및 과목명을 정확하게 입력하였습니다.
+        - label: 권한 변경 신청에 대해 담당 교수의 승인을 받았습니다.
+        - label: Username 및 과목명을 정확하게 입력하였습니다.
