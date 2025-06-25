@@ -1,4 +1,4 @@
-title: "[앱 설치 요청] 앱 이름을 입력해 주세요"
+title: "[앱 설치 요청] {년도}-{학기}-{과목명}-{분반번호 *없는 경우 생략}"
 labels:
   - 앱 설치 요청
 body:
@@ -31,21 +31,21 @@ body:
     id: app_name
     attributes:
       label: "설치 요청 앱 이름"
-      placeholder: "예: coderabbitai, sentry, gitbook"
+      placeholder: "예: coderabbitai, Sentry, GitBook"
     validations:
       required: true
+      
+  - type: input
+    id: target_repo
+    attributes:
+      label: "[일반 GitHub App인 경우에만 입력] 설치 대상 Repository"
+      placeholder: "예: CSID-DGU/Sample-Repository"
 
   - type: input
     id: marketplace_url
     attributes:
-      label: "[GitHub Marketplace 전용 앱인 경우] 앱 URL"
+      label: "[GitHub Marketplace 전용 앱인 경우에만 입력] 앱 URL"
       placeholder: "예: https://github.com/marketplace/gitbook-com"
-
-  - type: input
-    id: target_repo
-    attributes:
-      label: "[일반 GitHub App인 경우] 설치 대상 Repository"
-      placeholder: "예: csid-dgu/ai-project-team"
 
   - type: textarea
     id: reason
